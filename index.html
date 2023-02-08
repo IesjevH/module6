@@ -2,7 +2,6 @@
 
 <head>
     <title>Opdracht 1 - Back to the Basics</title>
-    <script src="./main.js"></script>
 </head>
 
 <body>
@@ -10,7 +9,7 @@
 
         let myName = "Isis";
 
-        let myAge = "17"; let myHairColor = "Bruin";
+        let myAge  = 17;let myHairColor = "Bruin";   
 
         let leeg = "";
 
@@ -57,11 +56,37 @@
         var string = myName;
         document.write ("tekst van vraag 10.4: " +string.charAt(3)+"<br>"); 
 
-        document.write("tekst van vraag 10.5: " +myName + " " +myName);
+        document.write("tekst van vraag 10.5: " +myName + " " +myName + "<br>");
+        
+        document.write("tekst van vraag 10.6: " +myName + " " +myAge +"<br>");
+
+        document.write("tekst van vraag 10.7: " +myAge + " " +myAge +"<br>");
+
+        document.write("tekst van vraag 10.8: " + (myAge + myAge)  +  "<br> " );
+
+
+
+        let myArray = [1,2,3,4,5,6,7,8,9,10] ; 
+
+        document.write("tekst van vraag 12.1: " + myArray + "," + myArray.push (11) + "<br>");
+
+        document.write("tekst van vraag 12.2: " +myArray.reverse()+ "<br>");
+
+        document.write("tekst van vraag 12.3: " +myArray.pop()+ "<br>");
+
+        document.write("tekst van vraag 12.4: " +myArray.splice(5,2)+ "<br>");
+
+        console.log (myArray);
+
+
+        let myArrayLength = myArray.length;
+
+        document.write(myArrayLength +"<br>");
+
+        if (myArray == 3){};
 
 
         
-
 
     </script>
 </body>
