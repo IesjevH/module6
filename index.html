@@ -106,22 +106,28 @@
 
         for (let array1 = 0; array1 < myArrayLength; array1++) {
             if (array1 == 3) {
-                console.log(myArray.splice(2 , 0 , "x"));
+                console.log(myArray.splice(2, 0, "x"));
             }
         }
 
         for (let teller = 0; teller < myArrayLength; teller++) {
             if (teller == 3) {
-                console.log(myArray[teller] +"y");
+                console.log(myArray[teller] + "y");
             }
         }
 
-        document.write(myArray  +"<br>" +"<br>");
+        document.write(myArray + "<br>" + "<br>");
 
-        //functies
+        //functies        
 
-        function myFunction(waarde1, waarde2){
-            return waarde1 * waarde2
+        function myFunction(waarde1, waarde2) {
+            if (waarde1 == waarde2){
+                return "yes";
+            }
+
+            else {
+                return "no";
+            }
         }
 
 
