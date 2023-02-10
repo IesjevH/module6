@@ -19,6 +19,8 @@
         let myBirthyear = "2005";
         //hierboven staan alle initiële variabelen
 
+        //berekeningen
+
         document.write("uitkomst van vraag 8.1: " + myAge * 1 + "<br>");
 
         document.write("uitkomst van vraag 8.2: " + myAge * myBirthyear + "<br>");
@@ -45,6 +47,7 @@
 
         document.write("uitkomst van vraag 8.13: " + (leeg * 1) + "<br>" + "<br>");
 
+        //teksten
 
         document.write("tekst van vraag 10.1: " + ("ik ben een 'brave' student") + "<br>");
 
@@ -64,7 +67,7 @@
 
         document.write("tekst van vraag 10.8: " + (myAge + myAge) + "<br> " + "<br>");
 
-
+        //arrays
 
         let myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -80,26 +83,46 @@
 
         let myArrayLength = myArray.length;
 
-        document.write(myArrayLength + "<br>");
+        document.write(myArrayLength + "<br>" + "<br>");
 
-        for  (let array1 = 0; array1 < myArrayLength  ; array1++){     
-            if (array1 != 3){
-            console.log(array1);
+        for (let array1 = 0; array1 < myArrayLength; array1++) {
+            if (array1 != 3) {
+                console.log(array1);
+            }
         }
-    }
 
-    for  (let array1 = 0; array1 < myArrayLength  ; array1++){
-        if (array1 = 7){
-            console.log(myArray.push(7));
+        for (let array1 = 0; array1 < myArrayLength; array1++) {
+            if (array1 = 7) {
+                console.log(myArray.push(7));
+            }
         }
-    }
 
-    for  (let array1 = 0; array1 < myArrayLength  ; array1++){
-        
-        if (array1){
-            console.log(myArray.shift());
+        //hier haalt "shift" het eerste cijfer weg uit de array
+        for (let array1 = 0; array1 < myArrayLength; array1++) {
+            if (array1 == 2) {
+                console.log(myArray.shift());
+            }
         }
-    }
+
+        for (let array1 = 0; array1 < myArrayLength; array1++) {
+            if (array1 == 3) {
+                console.log(myArray.splice(2 , 0 , "x"));
+            }
+        }
+
+        for (let teller = 0; teller < myArrayLength; teller++) {
+            if (teller == 3) {
+                console.log(myArray[teller] +"y");
+            }
+        }
+
+        document.write(myArray  +"<br>" +"<br>");
+
+        //functies
+
+        function myFunction(waarde1, waarde2){
+            return waarde1 * waarde2
+        }
 
 
     </script>
