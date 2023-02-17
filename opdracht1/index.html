@@ -6,131 +6,163 @@
 
 <body>
     <script>
-
+        
         let myName = "Isis";
-
-        let myAge = 17; let myHairColor = "Bruin";
-
-        let leeg = "";
-
-        //let 7_zeven = "zeven";
-        //let  null = "null";
-
-        let myBirthyear = "2005";
-        //hierboven staan alle initiële variabelen
-
-        //berekeningen
+        let myAge = 17;
+        let myHairColor = "bruin";
+        let leeg = " ";
+        let zeven_7 = 7;
+        let nol = null;
+        let myBirthyear = 2005;
 
         document.write("uitkomst van vraag 8.1: " + myAge * 1 + "<br>");
-
         document.write("uitkomst van vraag 8.2: " + myAge * myBirthyear + "<br>");
-
-        document.write("uitkomst van vraag 8.3: " + Math.round(myBirthyear / myAge) + "<br>");
-
-        document.write("uitkomst van vraag 8.4: " + Math.max(myBirthyear / myAge, myAge / myBirthyear) + "<br>");
-
-        document.write("uitkomst van vraag 8.5: " + Math.round((myBirthyear / myAge) * 100) / 100 + "<br>");
-
-        document.write("uitkomst van vraag 8.6: " + (2.5 * 2.5) + "<br>");
-
-        document.write("uitkomst van vraag 8.7: " + (3.14 * 2) + "<br>");
-
-        document.write("uitkomst van vraag 8.8: " + (12 / 0) + "<br>");
-
-        document.write("uitkomst van vraag 8.9: " + (myAge * 2) + "<br>");
-
-        document.write("uitkomst van vraag 8.10: " + (myAge * 2 + 1) + "<br>");
-
+        document.write(
+            "uitkomst van vraag 8.3: " + Math.ceil(myBirthyear / myAge) + "<br>"
+        );
+        document.write(
+            "uitkomst van vraag 8.4: " + Math.max(myBirthyear, myAge) + "<br>"
+        );
+        document.write(
+            "uitkomst van vraag 8.5: " + (myBirthyear / myAge).toFixed(2) + "<br>"
+        );
+        document.write("uitkomst van vraag 8.6: " + 2, 5 * 2, 5 + "<br>");
+        document.write("uitkomst van vraag 8.7: " + Math.sin(Math.PI * 2) + "<br>");
+        document.write("uitkomst van vraag 8.8: " + 12 / 0 + "<br>");
+        document.write("uitkomst van vraag 8.9: " + myAge * 2 + "<br>");
+        document.write("uitkomst van vraag 8.10: " + myAge * 2 + 1 + "<br>");
         document.write("uitkomst van vraag 8.11: " + myAge * (2 + 1) + "<br>");
-
-        document.write("uitkomst van vraag 8.12: " + (myAge + +1) + "<br>");
-
-        document.write("uitkomst van vraag 8.13: " + (leeg * 1) + "<br>" + "<br>");
-
-        //teksten
-
-        document.write("tekst van vraag 10.1: " + ("ik ben een 'brave' student") + "<br>");
-
-        document.write("tekst van vraag 10.2: " + myName + (" is een 'brave' student") + "<br>");
-
-        var string = myName;
-        document.write("tekst van vraag 10.3: " + string.charAt(0) + "<br>");
-
-        var string = myName;
-        document.write("tekst van vraag 10.4: " + string.charAt(3) + "<br>");
-
-        document.write("tekst van vraag 10.5: " + myName + " " + myName + "<br>");
-
-        document.write("tekst van vraag 10.6: " + myName + " " + myAge + "<br>");
-
-        document.write("tekst van vraag 10.7: " + myAge + " " + myAge + "<br>");
-
-        document.write("tekst van vraag 10.8: " + (myAge + myAge) + "<br> " + "<br>");
-
-        //arrays
-
+        document.write("uitkomst van vraag 8.12: " + myAge++ + "<br>");
+        document.write("uitkomst van vraag 8.13: " + nol * 1 + "<br>");
+        document.write("<br>");
+        document.write("<br>");
+        document.write("ik ben een 'brave' student" + myName + "<br>");
+        document.write(myName.charAt(0) + "<br>");
+        document.write(myName.charAt(4) + "<br>");
+        document.write(myName + " " + myName + "<br>");
+        document.write(myName + " " + --myAge + "<br>");
+        document.write(myAge + " " + myName + "<br>");
+        document.write(myAge + myAge + "<br>");
+        document.write("<br>");
+        document.write("<br>");
         let myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-        document.write("tekst van vraag 12.1: " + myArray + "," + myArray.push(11) + "<br>");
-
-        document.write("tekst van vraag 12.2: " + myArray.reverse() + "<br>");
-
-        document.write("tekst van vraag 12.3: " + myArray.pop() + "<br>");
-
-        document.write("tekst van vraag 12.4: " + myArray.splice(5, 2) + "<br>" + "<br>");
-
-        console.log(myArray);
-
+        myArray.push(11);
+        document.write(myArray + "<br>");
+        myArray.reverse();
+        document.write(myArray + "<br>");
+        myArray.reverse();
+        myArray.pop();
+        document.write(myArray + "<br>");
+        myArray.splice(4, 2);
+        document.write(myArray + "<br>");
+        document.write("<br>");
+        document.write("<br>");
         let myArrayLength = myArray.length;
+        document.write(myArrayLength + "<br>");
 
-        document.write(myArrayLength + "<br>" + "<br>");
+        for (i = 0; i < myArray.length; i++) {
+            console.log(myArray[i]);
+            document.write(myArray[i] + "<br>");
+        }
+        document.write("<br>");
+        for (i = 0; i < myArray.length; i++) {
+            if (myArray[i] == 3) {
+                continue;
+            }
+            console.log(myArray[i]);
+            document.write(myArray[i] + "<br>");
+        }
+        document.write("<br>");
+        for (i = 0; i < myArray.length; i++) {
+            if (myArray[i] == 7) {
+                document.write(myArray[i] + "<br>");
+            }
+            console.log(myArray[i]);
+            document.write(myArray[i] + "<br>");
+        }
+        document.write("<br>");
+        for (i = 0; i < myArray.length; i++) {
+            if (myArray[i] == 1) {
+                myArray.splice(0, 1);
+            }
+            console.log(myArray[i]);
+            document.write(myArray[i] + "<br>");
+        }
 
-        for (let array1 = 0; array1 < myArrayLength; array1++) {
-            if (array1 != 3) {
-                console.log(array1);
+        document.write("<br>");
+        for (i = 0; i < myArray.length; i++) {
+            if (myArray[i] == 3) {
+                myArray.splice(1, 1, "x");
+            }
+            console.log(myArray[i]);
+            document.write(myArray[i] + "<br>");
+        }
+        document.write("<br>");
+        for (i = 0; i < myArray.length; i++) {
+            myArray.splice(2, 1, "");
+            console.log(myArray[i]);
+            document.write(myArray[i] + "<br>");
+        }
+        document.write("<br>");
+        document.write("<br>");
+        function nee() {
+            for (let temp = 0; temp < 10; temp++) {
+                document.write('nee')
             }
         }
 
-        for (let array1 = 0; array1 < myArrayLength; array1++) {
-            if (array1 = 7) {
-                console.log(myArray.push(7));
+        function ja() {
+            document.write('ja');
+        }
+        function currency(waarden1, waarden2) {
+            if (waarden1 == waarden2) {
+                return ja();
+            } else {
+                return nee();
             }
         }
+        currency("dollar", "euro")
 
-        //hier haalt "shift" het eerste cijfer weg uit de array
-        for (let array1 = 0; array1 < myArrayLength; array1++) {
-            if (array1 == 2) {
-                console.log(myArray.shift());
+
+        document.write("<br>");
+        function teller(waarden1, waarden2) {
+            if (waarden1 == waarden2) {
+                return ja();
+            } else {
+                return nee();
             }
         }
-
-        for (let array1 = 0; array1 < myArrayLength; array1++) {
-            if (array1 == 3) {
-                console.log(myArray.splice(2, 0, "x"));
+        teller("6", 6)
+        document.write("<br>");
+        function myNaam(waarden1, waarden2) {
+            if (waarden1 == waarden2) {
+                return ja();
+            } else {
+                return nee();
             }
         }
-
-        for (let teller = 0; teller < myArrayLength; teller++) {
-            if (teller == 3) {
-                console.log(myArray[teller] + "y");
+        myNaam("dit ben ik", myName)
+        document.write("<br>");
+        function whatIsMyName(waarden1, waarden2) {
+            if (waarden1 == waarden2) {
+                return ja();
+            } else {
+                return nee();
             }
         }
+        whatIsMyName(myName, myName)
+        document.write("<br>");
+        document.write("<br>");
+        const date = new Date();
+        document.write(date);
 
-        document.write(myArray + "<br>" + "<br>");
+        const m = new Date();
+        let month = m.getMonth();
+        document.getElementById("month").innerHTML = month;
 
-        //functies        
-
-        function myFunction(waarde1, waarde2) {
-            if (waarde1 == waarde2){
-                return "yes";
-            }
-
-            else {
-                return "no";
-            }
-        }
-
-
+        const d = new Date();
+        let day = d.getDate();
+        document.getElementById("day").innerHTML = day;
     </script>
 </body>
 
