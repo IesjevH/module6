@@ -1,20 +1,82 @@
 <!DOCTYPE html>
+<title>opdracht 3 module 6</title>
 <html>
+
+<style>
+
+</style>
+
 <body>
-<h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1>
+    <h1 onclick="this.innerHTML = 'Ooops!'">klik</h1>
+
+    <button onclick="myFunction1()">counter =)</button>
+    <div id="text"></div><br>
+
+    <div id="slapen" onmousedown="myFunction2()" onmouseup="myFunction3()">
+        <img id="sapen" src="./mario-super-mario.gif" width="100px" height="auto">
+        <img id="dans" src="./AgonizingSpiffyGrouper-size_restricted.gif" width="100px" height="auto"
+            style="display:  none;">
+    </div>
+    <div id="text2"></div><br>
+
+    <button id="alertbt" onclick="showMessage()" width="100px" height="50px">alert</button><br><br>
+
+    <button id="counter0" onmouseover="myFunction4()">counter terug naar 0 =)</button>
+    <div id="text3"></div><br>
+
+    <p id="hover" onmouseover="bg()" onmouseout="bg0()">hover :D</p>
+
+    <input type="text" id="text4" onkeyup="myFunction6()">
+
+    <script defer>
+
+        let = document.getElementById('text');
+        let i = 0
+        function myFunction1() {
+            i++
+            text.innerHTML = i;
+        }
+
+        function myFunction2() {
+            document.getElementById('dans').style.display = "block"
+            document.getElementById("sapen").style.display = "none"
+        }
+
+        function myFunction3() {
+            document.getElementById('dans').style.display = "none"
+            document.getElementById("sapen").style.display = "block"
+        }
+
+        function showMessage() {
+            alert('bijna weekend =)');
+        }
+
+        function myFunction4() {
+            i = 0
+            text.innerHTML = i
+        }
+
+        function bg() {
+            document.getElementById("hover").style.color = "pink"
+        }
+
+        function bg0() {
+            document.getElementById("hover").style.color = "";
+        }
+
+        document.getElementById("text4").addEventListener("keypress", myFunction5);
+
+        function myFunction5() {
+            document.getElementById("text4").style.backgroundColor = "pink";
+        }
+
+        function myFunction6(){
+            document.getElementById("text4").style.backgroundColor = "";
+        }
 
 
-<button onclick="myFunction1()">Click me</button>
-<div id="text"></div>
 
-<script>
-let  =  document.getElementById('text');
-let i = 0
-    function  myFunction1() {
-        i++
-        text.innerHTML = i;
-    }
-
-</script>
+    </script>
 </body>
+
 </html>
