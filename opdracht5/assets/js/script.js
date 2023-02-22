@@ -1,6 +1,6 @@
 var crashCounter = 0;
 
-for (let boomaantallen = 0; boomaantallen < 5; boomaantallen++) {
+for (let boomaantallen = 0; boomaantallen < 5 ; boomaantallen++) {
     var img = document.createElement('img');
     img.src = 'assets/img/tree.jpg';
     img.className = 'tree';
@@ -9,7 +9,7 @@ for (let boomaantallen = 0; boomaantallen < 5; boomaantallen++) {
     document.getElementById('container').appendChild(img);
 }
 
-var car = document.getElementById();
+var car = document.getElementById("car");
 car.style.left = 100 + 'px';
 car.style.top = 50 + 'px';
 
@@ -17,38 +17,34 @@ document.body.onkeydown = function (event) {
     var keycode = event.keyCode;
 
     switch (keycode) {
-        case 40:
+        case 40: //beneden
             car.style.transform = 'rotate(90deg)';
             car.style.top = parseInt(car.style.top) + 5 + 'px';
-            if (crash() == true)
-            {
+            if (crash() == true) {
                 car.style.top = parseInt(car.style.top) - 5 + 'px';
             }
             break;
 
-        case 37:
+        case 37: //links
             car.style.transform = 'rotate(180deg)';
             car.style.left = parseInt(car.style.left) - 5 + 'px';
-            if (crash() == true)
-            {
+            if (crash() == true) {
                 car.style.top = parseInt(car.style.top) + 5 + 'px';
             }
             break;
 
-        case 39:
+        case 39: // rechts
             car.style.transform = 'rotate(0deg)';
-            car.style.left = parseInt(car.style.top) + 5 + 'px';
-            if (crash() == true)
-            {
+            car.style.left = parseInt(car.style.left) + 5 + 'px';
+            if (crash() == true) {  
                 car.style.top = parseInt(car.style.top) - 5 + 'px';
             }
             break;
 
-        case 38:
+        case 38: //boven
             car.style.transform = 'rotate(-90deg)';
             car.style.top = parseInt(car.style.top) - 5 + 'px';
-            if (crash() == true)
-            {
+            if (crash() == true) {
                 car.style.top = parseInt(car.style.top) + 5 + 'px';
             }
             break;
@@ -63,16 +59,16 @@ function crash() {
 
     for (let boomaantallen = 0; boomaantallen < trees.length; boomaantallen++) {
         overlap = !(
-            car.getBoundingClientRect().right       < trees[boomaantallen].getBoundingClientRect().left ||
-            car.getBoundingClientRect().left            > trees[boomaantallen].getBoundingClientRect().right ||
+            car.getBoundingClientRect().right < trees[boomaantallen].getBoundingClientRect().left ||
+            car.getBoundingClientRect().left > trees[boomaantallen].getBoundingClientRect().right ||
             car.getBoundingClientRect().bottom < trees[boomaantallen].getBoundingClientRect().top ||
-            car.getBoundingClientRect().top             > trees[boomaantallen].getBoundingClientRect().bottom
+            car.getBoundingClientRect().top > trees[boomaantallen].getBoundingClientRect().bottom
         );
 
         if (overlap) {
             crashCounter += 1;
             console.log("boem");
-            return  true;
+            return true;
         }
     }
 
