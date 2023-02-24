@@ -13,6 +13,10 @@ var car = document.getElementById("car");
 car.style.left = 100 + 'px';
 car.style.top = 50 + 'px';
 
+var car2 = document.getElementById("car2");
+car2.style.left = 100 + 'px';
+car2.style.top = 100 + 'px';
+
 document.body.onkeydown = function (event) {
     var keycode = event.keyCode;
 
@@ -49,22 +53,12 @@ document.body.onkeydown = function (event) {
             }
             break;
 
-        default: console.log('een andere toets is ingedrukt:    ' + keycode);
-    }
-}
+//auto2
 
-var car2 = document.getElementById("car2");
-car2.style.left = 100 + 'px';
-car2.style.top = 100 + 'px';
-
-document.body.onkeydown = function (event) {
-    var keycode1 = event.keyCode;
-
-    switch (keycode1) {
         case 83: //beneden
             car2.style.transform = 'rotate(90deg)';
             car2.style.top = parseInt(car2.style.top) + 5 + 'px';
-            if (crash() == true) {
+            if (crash2() == true) {
                 car2.style.top = parseInt(car2.style.top) - 5 + 'px';
             }
             break;
@@ -72,7 +66,7 @@ document.body.onkeydown = function (event) {
         case 65: //links
             car2.style.transform = 'rotate(180deg)';
             car2.style.left = parseInt(car2.style.left) - 5 + 'px';
-            if (crash() == true) {
+            if (crash2() == true) {
                 car2.style.top = parseInt(car2.style.top) + 5 + 'px';
             }
             break;
@@ -80,7 +74,7 @@ document.body.onkeydown = function (event) {
         case 68: // rechts
             car2.style.transform = 'rotate(0deg)';
             car2.style.left = parseInt(car2.style.left) + 5 + 'px';
-            if (crash() == true) {
+            if (crash2() == true) {
                 car2.style.top = parseInt(car2.style.top) - 5 + 'px';
             }
             break;
@@ -88,12 +82,12 @@ document.body.onkeydown = function (event) {
         case 87: //boven
             car2.style.transform = 'rotate(-90deg)';
             car2.style.top = parseInt(car2.style.top) - 5 + 'px';
-            if (crash() == true) {
+            if (crash2() == true) {
                 car2.style.top = parseInt(car2.style.top) + 5 + 'px';
             }
             break;
 
-        default: console.log('een andere toets is ingedrukt:    ' + keycode1);
+        default: console.log('een andere toets is ingedrukt:    ' + keycode);
     }
 }
 
@@ -112,8 +106,31 @@ function crash() {
 
         if (overlap) {
             crashCounter += 1;
-            console.log("boem");
+            text.innerHTML = crashCounter ++;   
             return true;
+        }
+    }
+
+    return false;
+}
+
+function crash2() {
+    var trees = document.getElementsByClassName('tree');
+    var overlap = false;
+
+    for (let boomaantallen = 0; boomaantallen < trees.length; boomaantallen++) {
+        overlap = !(
+            car2.getBoundingClientRect().right < trees[boomaantallen].getBoundingClientRect().left ||
+            car2.getBoundingClientRect().left > trees[boomaantallen].getBoundingClientRect().right ||
+            car2.getBoundingClientRect().bottom < trees[boomaantallen].getBoundingClientRect().top ||
+            car2.getBoundingClientRect().top > trees[boomaantallen].getBoundingClientRect().bottom 
+            );
+
+        if (overlap) {
+            crashCounter += 1;
+            text.innerHTML = crashCounter ++;
+            return true;
+            
         }
     }
 
