@@ -1,6 +1,6 @@
 var crashCounter = 0;
 
-for (let boomaantallen = 0; boomaantallen < 5 ; boomaantallen++) {
+for (let boomaantallen = 0; boomaantallen < 5; boomaantallen++) {
     var img = document.createElement('img');
     img.src = 'assets/img/tree.jpg';
     img.className = 'tree';
@@ -36,7 +36,7 @@ document.body.onkeydown = function (event) {
         case 39: // rechts
             car.style.transform = 'rotate(0deg)';
             car.style.left = parseInt(car.style.left) + 5 + 'px';
-            if (crash() == true) {  
+            if (crash() == true) {
                 car.style.top = parseInt(car.style.top) - 5 + 'px';
             }
             break;
@@ -52,6 +52,51 @@ document.body.onkeydown = function (event) {
         default: console.log('een andere toets is ingedrukt:    ' + keycode);
     }
 }
+
+var car2 = document.getElementById("car2");
+car2.style.left = 100 + 'px';
+car2.style.top = 100 + 'px';
+
+document.body.onkeydown = function (event) {
+    var keycode1 = event.keyCode;
+
+    switch (keycode1) {
+        case 83: //beneden
+            car2.style.transform = 'rotate(90deg)';
+            car2.style.top = parseInt(car2.style.top) + 5 + 'px';
+            if (crash() == true) {
+                car2.style.top = parseInt(car2.style.top) - 5 + 'px';
+            }
+            break;
+
+        case 65: //links
+            car2.style.transform = 'rotate(180deg)';
+            car2.style.left = parseInt(car2.style.left) - 5 + 'px';
+            if (crash() == true) {
+                car2.style.top = parseInt(car2.style.top) + 5 + 'px';
+            }
+            break;
+
+        case 68: // rechts
+            car2.style.transform = 'rotate(0deg)';
+            car2.style.left = parseInt(car2.style.left) + 5 + 'px';
+            if (crash() == true) {
+                car2.style.top = parseInt(car2.style.top) - 5 + 'px';
+            }
+            break;
+
+        case 87: //boven
+            car2.style.transform = 'rotate(-90deg)';
+            car2.style.top = parseInt(car2.style.top) - 5 + 'px';
+            if (crash() == true) {
+                car2.style.top = parseInt(car2.style.top) + 5 + 'px';
+            }
+            break;
+
+        default: console.log('een andere toets is ingedrukt:    ' + keycode1);
+    }
+}
+
 
 function crash() {
     var trees = document.getElementsByClassName('tree');
